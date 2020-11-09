@@ -1,10 +1,8 @@
-import threading
 from pynput import mouse
 from InputLogger import InputLogger
 
-class MouseLogger(InputLogger, threading.Thread):
+class MouseLogger(InputLogger):
     def __init__(self, time_interval):
-        threading.Thread.__init__(self)
         super().__init__(time_interval)
         self.log += "=====MouseLogger Started====="
     
