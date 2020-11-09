@@ -1,4 +1,5 @@
 import threading
+
 import utils
 
 class InputLogger(threading.Thread):
@@ -12,9 +13,9 @@ class InputLogger(threading.Thread):
         self.log += ts + "    " + line + "\n"
         
 
-    def save_log(self, file_name):
-        threading.Timer(self.interval, self.save_log, [file_name]).start()
-        f = open(file_name, "a")
+    def save_log(self, filename):
+        threading.Timer(self.interval, self.save_log, [filename]).start()
+        f = open(filename, "a")
         f.write(self.log)
         f.close()
         print(self.log)

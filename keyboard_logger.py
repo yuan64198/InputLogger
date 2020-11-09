@@ -1,5 +1,6 @@
 from pynput import keyboard
-from InputLogger import InputLogger
+
+from input_logger import InputLogger
 
 class KeyboardLogger(InputLogger):
     def __init__(self, time_interval):

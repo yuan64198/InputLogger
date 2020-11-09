@@ -1,5 +1,6 @@
 from pynput import mouse
-from InputLogger import InputLogger
+
+from input_logger import InputLogger
 
 class MouseLogger(InputLogger):
     def __init__(self, time_interval):

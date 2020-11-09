@@ -1,9 +1,8 @@
-from mss import screenshot
-from MouseLogger import MouseLogger
-from KeyboardLogger import KeyboardLogger
-from ScreenshotTaker import ScreenshotTaker
+from mouse_logger import MouseLogger
+from keyboard_logger import KeyboardLogger
+from screenshot_taker import ScreenshotTaker
+from constants import TIME_INTERVAL
 
-TIME_INTERVAL = 10
 
 
 

@@ -1,8 +1,10 @@
 import threading
-import pyscreenshot as ImageGrab
-import utils
 
-IMAGE_DIR = ''
+import pyscreenshot as ImageGrab
+
+import utils
+from constants import IMAGE_DIR
+
 
 class ScreenshotTaker(threading.Thread):
     def __init__(self, time_interval):
@@ -13,9 +15,9 @@ class ScreenshotTaker(threading.Thread):
     def takeScreenshot(self):
         threading.Timer(self.interval, self.takeScreenshot).start()
         
-        file_name = "ScreenShot_" + utils.getTimeStamp() + ".png"
+        filename = "ScreenShot_" + utils.getTimeStamp() + ".png"
         im = ImageGrab.grab()
-        im.save(file_name)
+        im.save(IMAGE_DIR+filename)
 
     def run(self):
         self.takeScreenshot()
