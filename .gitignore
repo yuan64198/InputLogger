@@ -1,4 +1,5 @@
 program_terminator.py
+img/
 
 *.txt
 !requirements.txt
