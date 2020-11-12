@@ -23,6 +23,7 @@ class Log:
 
 
 class Record:
+
     def __init__(self, timestamp, button, is_on_press, coordinates):
         self.timestamp = timestamp
         self.button = button
@@ -34,9 +35,11 @@ class Record:
 
         string = self.timestamp + '    ' + self.button + ' '
         if self.is_on_press:
-            string += 'pressed'
+            string += 'pressed    '
         else:
-            string += 'released'
+            string += 'released    '
+        
+        string += str(int(self.coordinates[0])) + ',' + str(int(self.coordinates[1]))
 
         return string
     
