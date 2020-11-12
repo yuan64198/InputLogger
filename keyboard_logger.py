@@ -27,6 +27,8 @@ class KeyboardLogger(InputLogger):
                 keyStr = "SHIFT"
             elif key == key.tab:
                 keyStr = "TAB"
+            elif key == key.enter:
+                keyStr = "ENTER"
             else:
                 keyStr = " " + str(key) + " "
         return keyStr
