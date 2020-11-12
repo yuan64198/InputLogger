@@ -1,5 +1,5 @@
 ##### Log Logger #####
-DEFAULT_LOG_MODE = 'text'
+DEFAULT_LOG_MODE = 'json'
 
 
 

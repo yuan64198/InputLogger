@@ -1,5 +1,39 @@
 ## About info
-The project records the keyboard input, mouse input, and screenshot from a target computer. Combined with proper NLP methods and image processing, the logger can provide sensitive information, such as username, password, or email to the attacker.
+The project records the keyboard input, mouse input, and screenshot from a target computer. Combined with proper NLP methods and image processing, the logger can steal sensitive information, such as username, password, or email to the attacker.
+
+## Log Options
+### Text:
+format: <em>timestamp    button action    coordinateX,coordinateY</em>
+### Json:
+format:
+```
+{
+    records: [
+        {
+            button: button1,
+            coordinates: [coordinateX,coordinateY],
+            is_on_press: True/False,
+            timestamp: ts
+        }
+        {
+            button: button2,
+            coordinates: [coordinateX,coordinateY],
+            is_on_press: True/False,
+            timestamp: ts
+        }
+        .
+        .
+        .
+        {
+            button: buttonN,
+            coordinates: [coordinateX,coordinateY],
+            is_on_press: True/False,
+            timestamp: ts
+        }
+    ],
+    timestamp: ts
+}
+```
 
 ## Samples
 > - sample1
