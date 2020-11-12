@@ -1,6 +1,7 @@
 *.ipynb
 program_terminator.py
-img/
+img/*
+log/*
 
 *.txt
 !requirements.txt

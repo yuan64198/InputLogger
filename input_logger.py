@@ -3,7 +3,7 @@ import json
 
 import utils
 
-from Log import Log, Record
+from log import Log, Record
 from constants import DEFAULT_LOG_MODE, LOG_DIR
 
 class InputLogger(threading.Thread):
