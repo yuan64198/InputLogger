@@ -1,6 +1,14 @@
+##### Log Logger #####
+DEFAULT_LOG_MODE = 'text'
+
+
+
+
 ##### Mouse Logger #####
 
 # Time interval for input logging and screenshot
+MOUSE_LOG_FILENAME = 'mouse_log'
+
 MOUSE_LOG_INTERVAL = 10
 
 MOUSE_LOG_ON_PRESS = True
@@ -12,6 +20,8 @@ MOUSE_LOG_ON_RELEASE = True
 
 
 ##### Keyboard Logger #####
+KEYBOARD_LOG_FILENAME = 'keyboard_log'
+
 KEYBOARD_LOG_INTERVAL = 10
 
 KEYBOARD_LOG_ON_PRESS = True

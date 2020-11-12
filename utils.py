@@ -2,5 +2,5 @@ import datetime
 
 def getTimeStamp():
     now = datetime.datetime.now()
-    ts = now.strftime('%Y-%m-%dT%H:%M:%S') + ('-%02d' % (now.microsecond / 10000))
+    ts = now.strftime('%Y%m%d_%H%M%S')
     return ts
