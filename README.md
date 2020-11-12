@@ -3,10 +3,10 @@ The project records the keyboard input, mouse input, and screenshot from a targe
 
 ## Samples
 > - sample1
-<img src="./samples/sample1.png" alt="drawing" width="500"/>
+<img src="./samples/mouse_log_text.png" alt="drawing" width="500"/>
 
 > - sample2
-<img src="./samples/sample2.png" alt="drawing" width="500"/>
+<img src="./samples/keyboard_log_text.png" alt="drawing" width="500"/>
 
 ## Installation
 `git clone https://github.com/yuan64198/InputLogger.git`
