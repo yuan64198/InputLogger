@@ -3,7 +3,7 @@ The project records the keyboard input, mouse input, and screenshot from a targe
 
 ## Log Options
 ### Text:
-format: <em>timestamp    button action    coordinateX,coordinateY</em>
+format: `timestamp    button action    coordinateX,coordinateY`
 ### Json:
 format:
 ```
