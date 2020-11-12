@@ -2,9 +2,11 @@
 The project records the keyboard input, mouse input, and screenshot from a target computer. Combined with proper NLP methods and image processing, the logger can provide sensitive information, such as username, password, or email to the attacker.
 
 ## Samples
-![Image of Sample1](https://github.com/yuan64198/samples/sample1.png)
+> - sample1
+<img src="./samples/sample1.png" alt="drawing" width="500"/>
 
-![Image of Sample2](https://github.com/yuan64198/samples/sample2.png)
+> - sample2
+<img src="./samples/sample2.png" alt="drawing" width="500"/>
 
 ## Installation
 `git clone https://github.com/yuan64198/InputLogger.git`
