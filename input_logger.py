@@ -11,7 +11,6 @@ class InputLogger(threading.Thread):
     def add_log(self, line):
         ts = utils.getTimeStamp()
         self.log += ts + "    " + line + "\n"
-        
 
     def save_log(self, filename):
         threading.Timer(self.interval, self.save_log, [filename]).start()

