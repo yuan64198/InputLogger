@@ -6,7 +6,7 @@ The project implements a logging program to record user input from a victim comp
 The main purpose of this project is warning people be aware of what kind of software they are using. For example, when using a real-time streaming service, we way want to know whether our audio is recorded and sent to the software provide. Or when we are typing text on a message tab, is it possible some malicous program is secretly recording the key log, and later extract your email, name, password from it.
 
 ## Packages Used
-> - json link: <a href='https://docs.python.org/3/library/json.html#module-json'>source</a>
+> - json <a href='https://docs.python.org/3/library/json.html#module-json'>source</a>
 > - Pillow <a href='https://pillow.readthedocs.io/en/stable/'>source</a>
 > - pynput <a href='https://pypi.org/project/pynput/'>source</a>
 > - pyscreenshot <a href='https://pypi.org/project/pyscreenshot/'>source</a>
