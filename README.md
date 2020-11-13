@@ -58,16 +58,13 @@ format:
 ## Installation
 `git clone https://github.com/yuan64198/InputLogger.git`
 
-## Requirements
-> - pynput
-> - pyscreenshot
-
 
 ## Run the Code
 `python main.py <option>`
 
 ### Running option
 `start`: Start recording user input
+
 `clear`: Remove all the log files
 
 ## Customize the logger in constants.py
