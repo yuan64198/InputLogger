@@ -12,7 +12,9 @@ The main purpose of this project is warning people be aware of what kind of soft
 > - pyscreenshot <a href='https://pypi.org/project/pyscreenshot/'>source</a>
 > - pyaudio <a href='https://pypi.org/project/PyAudio/'>source</a>
 
-Or use `conda install --yes --file requirements.txt` to download all the requirements if using conda. 
+#### Install the requirements with conda environment
+Existing environment: `conda install --yes --file requirements.txt`
+Create new environment: `conda create --name <env> --file requirements.txt`
 
 ## Log Options
 ### Text:
