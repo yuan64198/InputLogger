@@ -1,3 +1,5 @@
+<img src="./cyber_security.jpg" alt="drawing" height="500"/>
+
 ## About Info
 Nowadays people often download software from the internet. While downloading or using software from the Internet, people may not fully know what's going on under the table. A program may seems like not harmful at the first glance, but actually runs malicious functions secretly to steal users' sensitive information.
 
