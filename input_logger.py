@@ -1,7 +1,7 @@
 import threading
 import json
 
-import utils
+from utils import getTimeStamp, print_message
 
 from log import Log, Record
 from constants import DEFAULT_LOG_MODE, LOG_DIR
@@ -17,7 +17,7 @@ class InputLogger(threading.Thread):
 
 
     def add_record(self, button, is_on_press, coordinates=[0.0,0.0]):
-        ts = utils.getTimeStamp()
+        ts = getTimeStamp()
         record = Record(timestamp=ts, button=button, is_on_press=is_on_press, coordinates=coordinates)
         self.log.append_log(record)
 
@@ -28,22 +28,22 @@ class InputLogger(threading.Thread):
 
 
     def save_log(self, filename, mode=DEFAULT_LOG_MODE):
-
-        print("===== Save Log =====")
-
+        ts = getTimeStamp()
         if mode == 'json':
-            filename = self.generate_filename(filename, mode)
+            filename = self.generate_filename(ts, filename, mode)
             self.save_json(filename)
+            print_message("Save log to " + filename)
         elif mode == 'text':
-            filename = self.generate_filename(filename, mode)
+            filename = self.generate_filename(ts, filename, mode)
             self.save_text(filename)
+            print_message("Save log to " + filename)
         else:
             raise ValueError('No such log option')
 
         self.clear_buffer()
 
 
-    def generate_filename(self, filename, mode):
+    def generate_filename(self, ts, filename, mode):
         if mode == 'json':
             extension = '.json'
         elif mode == 'text':
@@ -51,7 +51,6 @@ class InputLogger(threading.Thread):
         else:
             raise ValueError('Option error for filename generation')
 
-        ts = utils.getTimeStamp()
         filename = filename + '_' + ts + extension
         
         return filename
@@ -66,14 +65,6 @@ class InputLogger(threading.Thread):
         with open(filename, "w") as text_file:
             text_file.write(str(self.log))
 
+
     def clear_buffer(self):
         self.log = Log()
-    
-    
-    def stop(self):
-        self._stop_event.set()
-
-    def stopped(self):
-        return self._stop_event.is_set()
-
-    

@@ -1,18 +1,20 @@
 from pynput import keyboard
 
+from utils import print_message
 from input_logger import InputLogger
-from constants import (LOG_DIR, 
-                    KEYBOARD_LOG_INTERVAL, 
+from constants import (KEYBOARD_LOG_INTERVAL, 
                     KEYBOARD_LOG_ON_PRESS, 
                     KEYBOARD_LOG_ON_RELEASE,
                     KEYBOARD_LOG_FILENAME,)
+
+
 
 class KeyboardLogger(InputLogger):
 
 
     def __init__(self):
         super().__init__(KEYBOARD_LOG_INTERVAL)
-        print('===== KeyboardLogger Started =====')
+        
 
 
     def parse_key(self, key):
@@ -51,6 +53,9 @@ class KeyboardLogger(InputLogger):
     
         
     def run(self):
+
+        print_message("===== Start Recording Mouse Input =====")
+
         self.save_log_every_timeframe(KEYBOARD_LOG_FILENAME)
         keyboard_listener = keyboard.Listener(on_press=self.on_press, on_release = self.on_release)
         with keyboard_listener:

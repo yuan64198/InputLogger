@@ -1,8 +1,8 @@
 from pynput import mouse
 
+from utils import print_message
 from input_logger import InputLogger
-from constants import (LOG_DIR, 
-                    MOUSE_LOG_INTERVAL, 
+from constants import (MOUSE_LOG_INTERVAL, 
                     MOUSE_LOG_ON_PRESS, 
                     MOUSE_LOG_ON_RELEASE,
                     MOUSE_LOG_FILENAME,)
@@ -10,7 +10,7 @@ from constants import (LOG_DIR,
 class MouseLogger(InputLogger):
     def __init__(self):
         super().__init__(MOUSE_LOG_INTERVAL)
-        print('===== MouaseLogger Started =====') 
+        
     
     def on_move(self, x, y):
         pass
@@ -25,6 +25,9 @@ class MouseLogger(InputLogger):
             self.add_record(str(button), is_on_press=False, coordinates=[x, y])
    
     def run(self):
+
+        print_message("===== Start Recording Mouse Input =====")
+
         self.save_log_every_timeframe(MOUSE_LOG_FILENAME)
         mouse_listener = mouse.Listener(
         on_move=self.on_move,

@@ -44,4 +44,3 @@ class Record:
         string += str(int(self.coordinates[0])) + ',' + str(int(self.coordinates[1]))
 
         return string
-    

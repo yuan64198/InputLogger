@@ -2,6 +2,7 @@
 program_terminator.py
 img/*
 log/*
+audio/*
 
 *.txt
 !requirements.txt
