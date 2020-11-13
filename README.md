@@ -1,5 +1,18 @@
-## About info
-The project records the keyboard input, mouse input, and screenshot from a target computer. Combined with proper NLP methods and image processing, the logger can steal sensitive information, such as username, password, or email to the attacker.
+## About Info
+Nowadays people often download software from the internet. While downloading or using software from the Internet, people may not fully know what's going on under the table. A program may seems like not harmful at the first glance, but actually runs malicious functions secretly to steal users' sensitive information.
+
+The project implements a logging program to record user input from a victim computer. The program first records keyboard input, mouse input, screenshot and audio input, and store them as log files.
+
+The main purpose of this project is warning people be aware of what kind of software they are using. For example, when using a real-time streaming service, we way want to know whether our audio is recorded and sent to the software provide. Or when we are typing text on a message tab, is it possible some malicous program is secretly recording the key log, and later extract your email, name, password from it.
+
+## Packages Used
+> - json link: <a href='https://docs.python.org/3/library/json.html#module-json'>source</a>
+> - Pillow <a href='https://pillow.readthedocs.io/en/stable/'>source</a>
+> - pynput <a href='https://pypi.org/project/pynput/'>source</a>
+> - pyscreenshot <a href='https://pypi.org/project/pyscreenshot/'>source</a>
+> - pyaudio <a href='https://pypi.org/project/PyAudio/'>source</a>
+
+Or use `conda install --yes --file requirements.txt` to download all the requirements if using conda. 
 
 ## Log Options
 ### Text:
@@ -49,10 +62,51 @@ format:
 > - pynput
 > - pyscreenshot
 
-or
-
-`conda install --yes --file requirements.txt` in conda environments
 
 ## Run the Code
-`python main.py`
+`python main.py <option>`
 
+### Running option
+`start`: Start recording user input
+`clear`: Remove all the log files
+
+## Customize the logger in constants.py
+
+#### Log Format
+DEFAULT_LOG_MODE = 'json'
+
+#### Mouse Logger
+> - ENABLE_MOUSE = True
+> - MOUSE_LOG_FILENAME = 'mouse_log'
+> - MOUSE_LOG_INTERVAL = 10
+> - MOUSE_LOG_ON_PRESS = True
+> - MOUSE_LOG_ON_RELEASE = True
+
+#### Keyboard Logger
+> - ENABLE_KEYBOARD = True
+> - KEYBOARD_LOG_FILENAME = 'keyboard_log'
+> - KEYBOARD_LOG_INTERVAL = 10
+> - KEYBOARD_LOG_ON_PRESS = True
+> - KEYBOARD_LOG_ON_RELEASE = True
+
+#### Screenshot Logger
+> - ENABLE_SCREENSHOT = True
+> - SCREENSHOT_FILENAME = 'screenshot'
+> - SCREENSHOT_INTERVAL = 2
+> - IMAGE_RESIZE = False
+> - IMAGE_WIDTH = 800
+
+#### Audio Logger
+> - ENABLE_AUDIO = True
+> - AUDIO_LOG_FILENAME = 'audio_log'
+> - CHUNK = 1024
+> - NUM_CHANNEL = 1
+> - FS = 44100
+> - AUDIO_LOG_INTERVAL = 10
+> - PROGRAM_LIFETIME = 3
+> - FILE_CHECKING_INTERVAL = 1
+
+#### Log Directory
+> - AUDIO_DIR = './audio/'
+> - IMAGE_DIR = './img/'
+> - LOG_DIR = './log/'
