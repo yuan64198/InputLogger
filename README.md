@@ -14,6 +14,7 @@ The main purpose of this project is warning people be aware of what kind of soft
 
 #### Install the requirements with conda environment
 Existing environment: `conda install --yes --file requirements.txt`
+
 Create new environment: `conda create --name <env> --file requirements.txt`
 
 ## Log Options
