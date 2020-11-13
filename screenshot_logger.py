@@ -3,7 +3,7 @@ import threading
 import pyscreenshot as ImageGrab
 from PIL import Image
 
-from utils import getTimeStamp, print_message
+from utils import get_timestamp, print_message
 from constants import (IMAGE_DIR, 
                     SCREENSHOT_INTERVAL,
                     SCREENSHOT_FILENAME,
@@ -28,7 +28,7 @@ class ScreenshotLogger(threading.Thread):
 
 
     def save_image(self, screenshot):
-        filename = SCREENSHOT_FILENAME + "_" + getTimeStamp() + ".png"
+        filename = SCREENSHOT_FILENAME + "_" + get_timestamp() + ".png"
         if IMAGE_RESIZE:
             screenshot = self.resize_image(screenshot)
         screenshot.save(IMAGE_DIR+filename)

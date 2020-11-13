@@ -1,7 +1,7 @@
 import threading
 import json
 
-from utils import getTimeStamp, print_message
+from utils import get_timestamp, print_message
 
 from log import Log, Record
 from constants import DEFAULT_LOG_MODE, LOG_DIR
@@ -17,7 +17,7 @@ class InputLogger(threading.Thread):
 
 
     def add_record(self, button, is_on_press, coordinates=[0.0,0.0]):
-        ts = getTimeStamp()
+        ts = get_timestamp()
         record = Record(timestamp=ts, button=button, is_on_press=is_on_press, coordinates=coordinates)
         self.log.append_log(record)
 
@@ -28,7 +28,7 @@ class InputLogger(threading.Thread):
 
 
     def save_log(self, filename, mode=DEFAULT_LOG_MODE):
-        ts = getTimeStamp()
+        ts = get_timestamp()
         if mode == 'json':
             filename = self.generate_filename(ts, filename, mode)
             self.save_json(filename)

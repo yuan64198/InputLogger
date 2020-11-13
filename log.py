@@ -1,12 +1,12 @@
 import json
 
-from utils import getTimeStamp
+from utils import get_timestamp
 
 
 class Log:
 
     def __init__(self):
-        self.timestamp = getTimeStamp()
+        self.timestamp = get_timestamp()
         self.records = []
 
     def __str__(self):

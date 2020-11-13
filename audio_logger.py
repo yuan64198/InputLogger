@@ -3,7 +3,7 @@ import threading
 
 import pyaudio
 
-from utils import getTimeStamp, print_message
+from utils import get_timestamp, print_message
 from constants import (AUDIO_LOG_FILENAME,
                     AUDIO_LOG_INTERVAL, 
                     CHUNK, 
@@ -39,7 +39,7 @@ class AudioLogger(threading.Thread):
 
 
     def save_audio(self):
-        filename = AUDIO_LOG_FILENAME + "_" + getTimeStamp() + ".wav"
+        filename = AUDIO_LOG_FILENAME + "_" + get_timestamp() + ".wav"
         wf = wave.open(AUDIO_DIR+filename, 'wb')
         wf.setnchannels(NUM_CHANNEL)
         wf.setsampwidth(pyaudio.PyAudio().get_sample_size(pyaudio.paInt16))
