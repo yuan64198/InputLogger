@@ -1,23 +1,44 @@
+# Input Logger
 <p align="center"><img src="./cyber_security.jpg" alt="drawing" height="400"/></p>
 
-## About Info
 Nowadays people often download software from the internet. While downloading or using software from the Internet, people may not fully know what's going on under the table. A program may seems like not harmful at the first glance, but actually runs malicious functions secretly to steal users' sensitive information.
 
 The project implements a logging program to record user input from a victim computer. The program first records keyboard input, mouse input, screenshot and audio input, and store them as log files.
 
 The main purpose of this project is warning people be aware of what kind of software they are using. For example, when using a real-time streaming service, we way want to know whether our audio is recorded and sent to the software provide. Or when we are typing text on a message tab, is it possible some malicous program is secretly recording the key log, and later extract your email, name, password from it.
 
-## Packages Used
-> - json <a href='https://docs.python.org/3/library/json.html#module-json'>source</a>
-> - Pillow <a href='https://pillow.readthedocs.io/en/stable/'>source</a>
-> - pynput <a href='https://pypi.org/project/pynput/'>source</a>
-> - pyscreenshot <a href='https://pypi.org/project/pyscreenshot/'>source</a>
-> - pyaudio <a href='https://pypi.org/project/PyAudio/'>source</a>
 
-#### Install the requirements with conda environment
-Existing environment: `conda install --yes --file requirements.txt`
 
-Create new environment: `conda create --name <env> --file requirements.txt`
+## Getting Started
+
+
+## Prerequisites
+
+> - Pillow <a href='https://pillow.readthedocs.io/en/stable/'>source    </a>
+> - pynput <a href='https://pypi.org/project/pynput/'>source    </a>
+> - pyscreenshot <a href='https://pypi.org/project/pyscreenshot/'>source    </a>
+> - pyaudio <a href='https://pypi.org/project/PyAudio/'>source    </a>
+
+## Installing
+
+1. Download the project from github:
+`git clone https://github.com/yuan64198/InputLogger.git`
+
+2. Install the packages:
+- Option 1:
+    - Install PIL: `pip install Pillow==2.2.1`
+    - Install pynput: `pip install pynput`
+    - Install pyscreenshot: `pip install pyscreenshot`
+    - Install Pyaudio: `pip install PyAudio`
+- Option 2 (conda):
+    - Existing environment: `conda install --yes --file requirements.txt`
+    - Create new environment: `conda create --name <env> --file requirements.txt`
+
+
+
+
+
+
 
 ## Log Options
 ### Text:
