@@ -1,14 +1,14 @@
 
 ENABLE_KEYBOARD = True
 ENABLE_MOUSE = True
-ENABLE_SCREENSHOT = True
-ENABLE_AUDIO = True
+ENABLE_SCREENSHOT = False
+ENABLE_AUDIO = False
 
 
 
 
 ##### Log #####
-DEFAULT_LOG_MODE = 'text'
+DEFAULT_LOG_MODE = 'json'
 
 
 
@@ -18,7 +18,7 @@ DEFAULT_LOG_MODE = 'text'
 # Time interval for input logging and screenshot
 MOUSE_LOG_FILENAME = 'mouse_log'
 
-MOUSE_LOG_INTERVAL = 10
+MOUSE_LOG_INTERVAL = 30
 
 MOUSE_LOG_ON_PRESS = True
 
@@ -31,7 +31,7 @@ MOUSE_LOG_ON_RELEASE = True
 ##### Keyboard Logger #####
 KEYBOARD_LOG_FILENAME = 'keyboard_log'
 
-KEYBOARD_LOG_INTERVAL = 10
+KEYBOARD_LOG_INTERVAL = 30
 
 KEYBOARD_LOG_ON_PRESS = True
 
