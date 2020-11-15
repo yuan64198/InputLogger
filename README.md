@@ -12,14 +12,14 @@ The main purpose of this project is warning people be aware of what kind of soft
 ## Getting Started
 
 
-## Prerequisites
+### Prerequisites
 
 > - Pillow <a href='https://pillow.readthedocs.io/en/stable/'>source    </a>
 > - pynput <a href='https://pypi.org/project/pynput/'>source    </a>
 > - pyscreenshot <a href='https://pypi.org/project/pyscreenshot/'>source    </a>
 > - pyaudio <a href='https://pypi.org/project/PyAudio/'>source    </a>
 
-## Installing
+### Installing
 
 1. Download the project from github:
 `git clone https://github.com/yuan64198/InputLogger.git`
@@ -31,20 +31,21 @@ The main purpose of this project is warning people be aware of what kind of soft
     - Install pyscreenshot: `pip install pyscreenshot`
     - Install Pyaudio: `pip install PyAudio`
 - Option 2 (conda):
-    - Existing environment: `conda install --yes --file requirements.txt`
-    - Create new environment: `conda create --name <env> --file requirements.txt`
+    - Move to the project directory: `cd InputLogger`
+    - Create new conda environment: `conda create --name <env> --file requirements.txt`
 
 
 
+### Running the tests
+1. Start logging user input: `python main.py start`
+2. Remove all log files: `python main.py clean`
 
 
 
-
-## Log Options
-### Text:
-format: `timestamp    button action    coordinateX,coordinateY`
-### Json:
-format:
+#### Log Options
+##### Text format:
+`<timestamp><button_clicked><action><coordinateX,coordinateY>`
+##### Json format:
 ```
 {
     records: [
@@ -74,26 +75,16 @@ format:
 }
 ```
 
-## Samples
+### Samples
 > - sample1
 <img src="./samples/mouse_log_text.png" alt="drawing" width="500"/>
 
 > - sample2
 <img src="./samples/keyboard_log_text.png" alt="drawing" width="500"/>
 
-## Installation
-`git clone https://github.com/yuan64198/InputLogger.git`
 
 
-## Run the Code
-`python main.py <option>`
-
-### Running option
-`start`: Start recording user input
-
-`clear`: Remove all the log files
-
-## Customize the logger in constants.py
+### Customize the logger in constants.py
 
 #### Log Format
 DEFAULT_LOG_MODE = 'json'
