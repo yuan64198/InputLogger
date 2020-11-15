@@ -77,10 +77,10 @@ The main purpose of this project is warning people be aware of what kind of soft
 
 ### Samples
 > - sample1
-<img src="./samples/mouse_log_text.png" alt="drawing" width="500"/>
+<img src="./samples/sample1.png" alt="drawing" width="500"/>
 
 > - sample2
-<img src="./samples/keyboard_log_text.png" alt="drawing" width="500"/>
+<img src="./samples/sample2.png" alt="drawing" width="500"/>
 
 
 
