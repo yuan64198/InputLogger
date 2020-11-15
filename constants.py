@@ -8,7 +8,7 @@ ENABLE_AUDIO = True
 
 
 ##### Log #####
-DEFAULT_LOG_MODE = 'json'
+DEFAULT_LOG_MODE = 'text'
 
 
 
