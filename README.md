@@ -124,3 +124,7 @@ DEFAULT_LOG_MODE = 'json'
 > - AUDIO_DIR = './audio/'
 > - IMAGE_DIR = './img/'
 > - LOG_DIR = './log/'
+
+
+## Authors
+* **Chih-Yuan Huang** - [Peronal Page](https://yuan64198.github.io/) - [LinkedIn](https://www.linkedin.com/in/chih-yuan-huang/)
